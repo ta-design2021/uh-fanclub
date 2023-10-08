@@ -31,5 +31,7 @@
 /config/master.key
 
 # 20230103下記を追記
+# .DS_Storeという不要なファイルがGitで管理されなくなる記述
 .Ds_Store
+# 保存するごとにhistoryを生成させなくする記述
 .history
