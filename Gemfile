@@ -51,6 +51,10 @@ gem "bootsnap", require: false
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
+  # 20231009追記 テストのため
+  gem 'rspec-rails'
+  gem 'factory_bot_rails'
+  gem 'faker'
 end
 
 group :development do
@@ -73,7 +77,10 @@ group :test do
   gem "webdrivers"
 end
 
-# 本番環境（Render）のデータベース（PostgreSQL）を使用できるようGemを追加
+# 20231008追記 本番環境（Render）のデータベース（PostgreSQL）を使用できるようGemを追加
 group :production do
   gem 'pg'
 end
+
+# 20231009追記 ユーザー管理機能のためのGem
+gem 'devise'
