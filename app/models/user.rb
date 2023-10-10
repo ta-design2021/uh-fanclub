@@ -4,6 +4,6 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  has_one :address
-  belongs_to :membership_plan
+  # has_one :address
+  # belongs_to :membership_plan
 end

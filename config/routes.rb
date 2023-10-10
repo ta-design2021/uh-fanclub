@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  get 'users/show'
   devise_for :users
+  get 'top/index'
+  # トップページにアクセスしたときのルート
+  root "top#index"
   # マイページに遷移するルート
-  root "users#show"
 end

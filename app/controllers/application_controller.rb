@@ -1,9 +1,11 @@
 class ApplicationController < ActionController::Base
   before_action :basic_auth
+  before_action :configure_permitted_parameters, if: :devise_controller?
 
-  def after_sign_in_path_for(resource)
-    user_path(resource) # ログイン後にマイページに遷移
-  end
+  # ログイン後にマイページに遷移
+  # def after_sign_in_path_for(resource)
+  #   user_path(resource)
+  # end
 
 
   private
@@ -13,4 +15,9 @@ class ApplicationController < ActionController::Base
       username == ENV["BASIC_AUTH_USER"] && password == ENV["BASIC_AUTH_PASSWORD"]  # 環境変数を読み込む記述に変更
     end
   end
+
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:nickname, :family_name, :first_name, :family_name_kana, :first_name_kana, :gender_id, :birth_date, :phone_number])
+  end
+
 end
