@@ -4,7 +4,9 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  # has_one :address
+  # addressesテーブルとのアソシエーション
+  has_one :addresses
+  # membership_plansテーブルとのアソシエーション
   # belongs_to :membership_plan
 
   with_options presence: true do

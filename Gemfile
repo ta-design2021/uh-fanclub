@@ -84,3 +84,7 @@ end
 
 # 20231009追記 ユーザー管理機能のためのGem
 gem 'devise'
+# 20231012追記 アクティブハッシュのためのGem
+gem 'active_hash'
+# 20231012追記 デバッグのためのGem
+gem 'pry-rails'
